@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Una invitación especial</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="bg">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+    <div class="grid"></div>
+  </div>
+
+  <main class="app">
+    <section class="phone-shell" aria-label="Invitación interactiva">
+      <div class="top-bar">
+        <div class="window-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <p>love-request.exe</p>
+        <button class="sound" id="soundBtn" title="Activar sonido">♪</button>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-label">
+          <span id="stepText">Paso 1 de 6</span>
+          <span id="percentText">0%</span>
+        </div>
+        <div class="progress"><span id="progressBar"></span></div>
+      </div>
+
+      <section class="screen active" data-screen="0">
+        <div class="badge">Mensaje entrante 💌</div>
+        <h1>Hola, tengo una pregunta importante...</h1>
+        <p class="lead">No es una página cualquiera. Es una mini experiencia hecha para invitarte de una forma más bonita, divertida y especial.</p>
+        <div class="hero-card">
+          <div class="heart-core">♥</div>
+          <div class="code-lines">
+            <span>const personaEspecial = "tú";</span>
+            <span>let nervios = 100%;</span>
+            <span>if (aceptas) felicidad++;</span>
+          </div>
+        </div>
+        <button class="main-btn" data-next>Empezar</button>
+      </section>
+
+      <section class="screen" data-screen="1">
+        <div class="badge">Pregunta 1 ✨</div>
+        <h2>Antes de seguir...</h2>
+        <p class="lead">¿Prometes responder con sinceridad y no reírte demasiado de mis nervios?</p>
+        <div class="choices two">
+          <button class="choice" data-next>Sí, prometo</button>
+          <button class="choice soft" data-next>Tal vez un poquito</button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="2">
+        <div class="badge">Pregunta 2 🌙</div>
+        <h2>El plan ideal sería...</h2>
+        <p class="lead">Escoge el tipo de salida que más te gustaría.</p>
+        <div class="choice-grid">
+          <button class="mini-card" data-plan="Café bonito" data-next><span>☕</span><b>Café bonito</b><small>Plática tranquila</small></button>
+          <button class="mini-card" data-plan="Cine" data-next><span>🎬</span><b>Cine</b><small>Palomitas incluidas</small></button>
+          <button class="mini-card" data-plan="Cena" data-next><span>🍝</span><b>Cena</b><small>Algo más especial</small></button>
+          <button class="mini-card" data-plan="Paseo" data-next><span>🌆</span><b>Paseo</b><small>Caminar y reír</small></button>
+        </div>
+      </section>
+
+      <section class="screen" data-screen="3">
+        <div class="badge">Pregunta 3 📅</div>
+        <h2>Ahora elige fecha y hora</h2>
+        <p class="lead">Para que el plan pase de “idea bonita” a “momento real”.</p>
+        <div class="form-card">
+          <label>Fecha
+            <input type="date" id="dateInput">
+          </label>
+          <label>Hora
+            <input type="time" id="timeInput">
+          </label>
+        </div>
+        <button class="main-btn" id="saveDateBtn">Guardar plan</button>
+      </section>
+
+      <section class="screen" data-screen="4">
+        <div class="badge">Momento decisivo 💘</div>
+        <h2>Entonces...</h2>
+        <p class="lead big-question">¿Quieres salir conmigo?</p>
+        <div class="yes-no-area" id="yesNoArea">
+          <button class="yes-btn" id="yesBtn">Sí, quiero 💖</button>
+          <button class="no-btn" id="noBtn">No 😳</button>
+        </div>
+        <p class="hint">Pista: el botón “No” no coopera mucho.</p>
+      </section>
+
+      <section class="screen" data-screen="5">
+        <div class="success-icon">✓</div>
+        <h2>¡Sabía que dirías que sí!</h2>
+        <p class="lead">Tu invitación quedó guardada en el corazón del sistema.</p>
+        <div class="ticket" id="ticket">
+          <div>
+            <small>Plan elegido</small>
+            <strong id="ticketPlan">Sorpresa</strong>
+          </div>
+          <div>
+            <small>Fecha</small>
+            <strong id="ticketDate">Por confirmar</strong>
+          </div>
+          <div>
+            <small>Hora</small>
+            <strong id="ticketTime">Por confirmar</strong>
+          </div>
+          <div>
+            <small>Estado</small>
+            <strong>Aceptado 💌</strong>
+          </div>
+        </div>
+        <div class="final-actions">
+          <button class="main-btn" id="downloadBtn">Descargar invitación</button>
+          <button class="ghost-btn" id="restartBtn">Ver otra vez</button>
+        </div>
+      </section>
+    </section>
+
+    <aside class="side-panel">
+      <div class="panel-card">
+        <span class="chip">Versión mejorada</span>
+        <h3>Más que una página, una experiencia.</h3>
+        <p>Incluye interacción, progreso, selección de plan, fecha, botón travieso, confeti y una invitación final descargable.</p>
+      </div>
+      <div class="stats">
+        <div><b>6</b><span>pantallas</span></div>
+        <div><b>100%</b><span>responsive</span></div>
+        <div><b>∞</b><span>detalles</span></div>
+      </div>
+    </aside>
+  </main>
+
+  <canvas id="confetti"></canvas>
+  <script src="script.js"></script>
+</body>
+</html>
